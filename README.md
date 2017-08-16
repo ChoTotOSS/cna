@@ -112,7 +112,7 @@ Now your app is ready to deploy.
 
 # What's inside?
 
-**Front end**
+**Technologies**
  - [next.js](https://github.com/zeit/next.js/)
  - [Express](https://expressjs.com/)
  - [styled-components](https://www.styled-components.com/)
