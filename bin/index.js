@@ -72,7 +72,7 @@ if (!useYarn) {
   if (hasMinNpm) {
     console.log(
       chalk.yellow(
-        `You are using npm ${npmInfo.npmVersion} so the project will be boostrapped with an old unsupported version of tools.\n\n` +
+        `You are using npm ${npmVersion} so the project will be boostrapped with an old unsupported version of tools.\n\n` +
         `Please update to npm 3 or higher for a better, fully supported experience.\n`
       )
     )
