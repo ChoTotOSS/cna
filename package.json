@@ -3,10 +3,13 @@
   "version": "1.0.1",
   "description": "Create next.js apps boilerplate",
   "main": "index.js",
+  "scripts": {
+    "generate": "plop --plopfile bin/generator.js"
+  },
   "bin": {
     "cna": "./bin/index.js"
   },
-  "author": "",
+  "author": "Dzung Nguyen",
   "license": "ISC",
   "engines": {
     "node": ">=4"
@@ -15,6 +18,7 @@
     "chalk": "^2.0.1",
     "commander": "^2.10.0",
     "fs-extra": "^4.0.0",
+    "plop": "^1.8.1",
     "semver": "^5.3.0"
   }
 }

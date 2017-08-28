@@ -6,7 +6,7 @@ const chalk = require('chalk')
 const fs = require('fs-extra')
 const path = require('path')
 const semver = require('semver')
-const { spawn, execSync } = require('child_process')
+const { spawn, execSync, exec } = require('child_process')
 const packageJson = require('../package.json')
 
 const install = require('./install')
@@ -39,6 +39,7 @@ function checkNpmVersion() {
 
 const program = new commander.Command(packageJson.name)
   .version(packageJson.version)
+  .option('-c, --component', 'Add component')
   .arguments('<project-directory>')
   .usage(`${chalk.green('<project-directory>')} [options]`)
   .action(name => {
@@ -78,4 +79,18 @@ if (!useYarn) {
     )
   }
 }
-install(useYarn)
+if (program.component) {
+  const plop = path.join(__dirname, '../node_modules/.bin/plop')
+  const generator = path.join(__dirname, '/generator.js')
+
+  const install = spawn(plop, ['--plopfile', generator], {
+    cwd: process.cwd(),
+    stdio: 'inherit'
+  });
+
+  install.on('exit', code => {
+    console.log(chalk.cyan('Completed setting up project!!!'))
+    process.exit(code)
+  })
+}
+// install(useYarn)

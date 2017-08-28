@@ -12,7 +12,7 @@ module.exports = function(userYarn) {
 
   const pathName = path.join(process.cwd(), appName)
   const appNameExists = fs.existsSync(pathName)
-  const templatesPath = path.join(__dirname, '..', 'templates')
+  const templatesPath = path.join(__dirname, '..', 'templates/basic')
 
   if (!appNameExists) {
     fs.ensureDirSync(pathName)
