@@ -1,10 +1,10 @@
-const { execSync } = require('child_process')
+const { execSync } = require('child_process');
 
-module.exports = function () {
+module.exports = function() {
   try {
-    execSync('yarnpkg --version', { stdio: 'ignore' })
-    return true
+    execSync('yarnpkg --version', { stdio: 'ignore' });
+    return true;
   } catch (e) {
-    return false
+    return false;
   }
-}
+};

@@ -1,3 +1,3 @@
-const generator = require('./generator/index.js')
+const generator = require('./generator/index.js');
 
-module.exports = generator
+module.exports = generator;
