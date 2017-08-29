@@ -19,7 +19,7 @@ module.exports = {
     {
       type: 'input',
       name: 'name',
-      message: 'What do want to call this component?',
+      message: 'Component name: ',
       // validate: function (value) {
 
       // }

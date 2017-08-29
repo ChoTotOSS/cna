@@ -1,0 +1,47 @@
+/**
+*
+* {{ properCase name }}
+*
+*/
+
+import React from 'react'
+import { connect } from 'react-redux'
+import styled from 'styled-components'
+
+{{#if wantMessages}}
+import messages from './messages'
+{{/if}}
+
+const H1 = styled.h1`
+  color: red;
+`
+
+class {{ properCase name }} extends React.{{{ typeComponent }}} {
+  render () {
+    return (
+      <div>
+      {{#if wantMessages}}
+        <H1>{messages.greeting} Container</H1>
+      {{else}}
+        <H1>Container</H1>
+      {{/if}}
+      </div>
+    )
+  }
+}
+
+export default {{ properCase name }}
+
+const mapStateToProps = state => {
+  return {
+    {{lowerCase name}}: state.app
+  }
+}
+
+export function mapDispatchToProps (dispatch) {
+  return {
+    dispatch
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Listing)

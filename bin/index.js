@@ -3,43 +3,21 @@
 
 const commander = require('commander')
 const chalk = require('chalk')
-const fs = require('fs-extra')
 const path = require('path')
 const semver = require('semver')
-const { spawn, execSync, exec } = require('child_process')
-const packageJson = require('../package.json')
+const { spawn } = require('child_process')
 
+const packageJson = require('../package.json')
+const getNpmVersion = require('../utils/npmVersion')
+const shouldUseYarn = require('../utils/shouldUseYarn')
 const install = require('./install')
 
 let appName = undefined
 
-function shouldUseYarn() {
-  try {
-    execSync('yarnpkg --version', { stdio: 'ignore' })
-    return true
-  } catch (e) {
-    return false
-  }
-}
-
-function checkNpmVersion() {
-  let hasMinNpm = false
-  let npmVersion = null
-  try {
-    npmVersion = execSync('npm --version').toString().trim()
-    hasMinNpm = semver.lt(npmVersion, '3.0.0')
-  } catch (err) {
-    // ignore
-  }
-  return {
-    hasMinNpm: hasMinNpm,
-    npmVersion: npmVersion,
-  }
-}
-
 const program = new commander.Command(packageJson.name)
   .version(packageJson.version)
   .option('-c, --component', 'Add component')
+  .option('-ct, --container', 'Add container')
   .arguments('<project-directory>')
   .usage(`${chalk.green('<project-directory>')} [options]`)
   .action(name => {
@@ -54,22 +32,19 @@ const program = new commander.Command(packageJson.name)
 
 if (typeof appName === 'undefined') {
   console.error('Please specify the project directory:')
-  console.log(
-    `  ${chalk.cyan(program.name())} ${chalk.green('<project-directory>')}`
-  )
+  console.log(`  ${chalk.cyan(program.name())} ${chalk.green('<project-directory>')}`)
   console.log()
   console.log('For example:')
   console.log(`  ${chalk.cyan(program.name())} ${chalk.green('my-react-app')}`)
   console.log()
-  console.log(
-    `Run ${chalk.cyan(`${program.name()} --help`)} to see all options.`
-  )
+  console.log(`Run ${chalk.cyan(`${program.name()} --help`)} to see all options.`)
   process.exit(1)
 }
 
 const useYarn = shouldUseYarn()
+
 if (!useYarn) {
-  const { hasMinNpm, npmVersion } = checkNpmVersion()
+  const { hasMinNpm, npmVersion } = getNpmVersion()
   if (hasMinNpm) {
     console.log(
       chalk.yellow(
@@ -79,18 +54,35 @@ if (!useYarn) {
     )
   }
 }
+
 if (program.component) {
   const plop = path.join(__dirname, '../node_modules/.bin/plop')
   const generator = path.join(__dirname, '/generator.js')
 
-  const install = spawn(plop, ['--plopfile', generator], {
+  const install = spawn(plop, ['--plopfile', generator, 'component'], {
     cwd: process.cwd(),
     stdio: 'inherit'
-  });
+  })
 
-  install.on('exit', code => {
-    console.log(chalk.cyan('Completed setting up project!!!'))
-    process.exit(code)
+  install.on('exit', function () {
+    console.log(chalk.cyan('Component has been added.'))
+    process.exit(1)
   })
 }
+
+if (program.container) {
+  const plop = path.join(__dirname, '../node_modules/.bin/plop')
+  const generator = path.join(__dirname, '/generator.js')
+
+  const install = spawn(plop, ['--plopfile', generator, 'container'], {
+    cwd: process.cwd(),
+    stdio: 'inherit'
+  })
+
+  install.on('exit', function () {
+    console.log(chalk.cyan('Container has been added.'))
+    process.exit(1)
+  })
+}
+
 // install(useYarn)
