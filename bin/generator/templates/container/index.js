@@ -1,4 +1,4 @@
-const path = require('path')
+const path = require('path');
 
 module.exports = {
   description: 'Add a container',
@@ -6,7 +6,7 @@ module.exports = {
     {
       type: 'input',
       name: 'name',
-      message: 'Container name: ',
+      message: 'Container name: '
       // validate: function (value) {
 
       // }
@@ -15,8 +15,14 @@ module.exports = {
       type: 'list',
       name: 'typeComponent',
       message: 'Select type of component: ',
-      default: 'PureComponent',
-      choices: () => ['PureComponent', 'Component']
+      default: 'Component',
+      choices: () => ['Component', 'PureComponent']
+    },
+    {
+      type: 'confirm',
+      name: 'wantRedux',
+      default: true,
+      message: 'Do you want to add redux?'
     },
     {
       type: 'confirm',
@@ -25,8 +31,11 @@ module.exports = {
       message: 'Do you want to add messages?'
     }
   ],
-  actions: function (data) {
-    const pathToContainer = path.join(process.cwd(), 'containers/{{properCase name}}')
+  actions: function(data) {
+    const pathToContainer = path.join(
+      process.cwd(),
+      'containers/{{properCase name}}'
+    );
 
     const actions = [
       {
@@ -59,8 +68,8 @@ module.exports = {
         templateFile: path.join(__dirname, 'reducer.js.hbs'),
         abortOnFail: true
       }
-  ];
+    ];
 
-    return actions
+    return actions;
   }
-}
+};
