@@ -1,10 +1,10 @@
-const path = require('path')
+const path = require('path');
 
 const COMPONENT_TYPE = {
   STATELESS: 'Stateless Component',
   PURE: 'Pure Component',
-  STATEFUL: 'Stateful Component',
-}
+  STATEFUL: 'Stateful Component'
+};
 
 module.exports = {
   description: 'Add a component',
@@ -14,12 +14,16 @@ module.exports = {
       name: 'type',
       message: 'Select the type of component',
       default: COMPONENT_TYPE.STATEFUL,
-      choices: () => [COMPONENT_TYPE.STATEFUL, COMPONENT_TYPE.STATELESS, COMPONENT_TYPE.PURE]
+      choices: () => [
+        COMPONENT_TYPE.STATEFUL,
+        COMPONENT_TYPE.STATELESS,
+        COMPONENT_TYPE.PURE
+      ]
     },
     {
       type: 'input',
       name: 'name',
-      message: 'Component name: ',
+      message: 'Component name: '
       // validate: function (value) {
 
       // }
@@ -31,35 +35,40 @@ module.exports = {
       message: 'Do you want to add messages?'
     }
   ],
-  actions: function (data) {
+  actions: function(data) {
     let template;
     switch (data.type) {
       case 'Stateless Component': {
-        template = 'component.stateless.js.hbs'
+        template = 'component.stateless.js.hbs';
         break;
       }
       case 'Pure Component': {
-        template = 'component.pure.js.hbs'
+        template = 'component.pure.js.hbs';
         break;
       }
       case 'Stateful Component': {
-        template = 'component.js.hbs'
+        template = 'component.js.hbs';
         break;
       }
       default: {
-        template = 'component.stateless.js.hbs'
+        template = 'component.stateless.js.hbs';
       }
     }
-    template = path.join(__dirname, template)
-    const pathToFile = path.join(process.cwd(), 'components/{{properCase name}}/index.js')
+    template = path.join(__dirname, template);
+    const pathToFile = path.join(
+      process.cwd(),
+      'components/{{properCase name}}/index.js'
+    );
 
-    const actions = [{
-      type: 'add',
-      path: pathToFile,
-      templateFile: template,
-      abortOnFail: true
-    }];
+    const actions = [
+      {
+        type: 'add',
+        path: pathToFile,
+        templateFile: template,
+        abortOnFail: true
+      }
+    ];
 
-    return actions
+    return actions;
   }
-}
+};

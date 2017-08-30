@@ -21,7 +21,8 @@ const COMMANDS = {
   new: 'new',
   component: 'component',
   container: 'container',
-  hoc: 'hoc'
+  hoc: 'hoc',
+  page: 'page'
 };
 
 program
@@ -87,6 +88,13 @@ program
   .description('Add new HOC')
   .action(function() {
     generate('hoc');
+  });
+
+program
+  .command(`${COMMANDS.page}`)
+  .description('Add new Page')
+  .action(function() {
+    generate('page');
   });
 
 program.parse(process.argv);
