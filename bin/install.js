@@ -27,10 +27,10 @@ module.exports = function(userYarn) {
       stdio: 'inherit'
     });
     install.on('exit', code => {
-      console.log(chalk.cyan('Completed setting up project!!!'));
+      console.log(chalk.cyan('🎉Completed setting up project!!!🎊'));
       process.exit(code);
     });
   } else {
-    console.log(chalk.red('Project name is already existed.'));
+    console.log(chalk.red('Project name is already existed. 😕😕😕'));
   }
 };

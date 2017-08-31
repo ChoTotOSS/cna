@@ -12,7 +12,7 @@ module.exports = function(componentType) {
   });
 
   runPlop.on('exit', function() {
-    console.log(chalk.cyan(`${componentType} has been added.`));
+    console.log(chalk.cyan('Completed task!!!'));
     process.exit(1);
   });
 };
