@@ -81,6 +81,10 @@ my-app
 ```
 
 # Generators
+Provide commands to create new: page, container, component and HOC.
+
+**Note:** You should stay at root directory of project and run commands.
+
 ## `cna new my-app`
 To create new web application with name `my-app`
 
@@ -95,8 +99,6 @@ To create new component. New page is located at `components` directory.
 
 ## `cna hoc`
 To create new HOC. New page is located at `hocs` directory.
-
-**Note:** You should stay at root directory of project.
 
 # Commands
 
