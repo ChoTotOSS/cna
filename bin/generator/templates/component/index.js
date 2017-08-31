@@ -1,4 +1,5 @@
 const path = require('path');
+const componentExists = require('../../../utils/componentExists');
 
 const COMPONENT_TYPE = {
   STATELESS: 'Stateless Component',
@@ -23,10 +24,13 @@ module.exports = {
     {
       type: 'input',
       name: 'name',
-      message: 'Component name: '
-      // validate: function (value) {
-
-      // }
+      message: 'Component name: ',
+      validate: function (componentName) {
+        if ((/.+/).test(componentName)) {
+          return componentExists('components', componentName) ? 'A component with this name already exists' : true;
+        }
+        return 'The name is required'; 
+      }
     },
     {
       type: 'confirm',

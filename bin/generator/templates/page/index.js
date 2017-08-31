@@ -1,8 +1,8 @@
 const path = require('path');
+const componentExists = require('../../../utils/componentExists');
 
 const COMPONENT_TYPE = {
   STATELESS: 'Stateless Component',
-  PURE: 'Pure Component',
   STATEFUL: 'Stateful Component'
 };
 
@@ -10,23 +10,15 @@ module.exports = {
   description: 'Add a page',
   prompts: [
     {
-      type: 'list',
-      name: 'type',
-      message: 'Select the type of component',
-      default: COMPONENT_TYPE.STATELESS,
-      choices: () => [
-        COMPONENT_TYPE.STATELESS,
-        COMPONENT_TYPE.STATEFUL,
-        COMPONENT_TYPE.PURE
-      ]
-    },
-    {
       type: 'input',
       name: 'name',
-      message: 'Page name: '
-      // validate: function (value) {
-
-      // }
+      message: 'Page name: ',
+      validate: function (componentName) {
+        if ((/.+/).test(componentName)) {
+          return componentExists('pages', componentName) ? 'A page with this name already exists' : true;
+        }
+        return 'The name is required'; 
+      }
     },
     {
       type: 'confirm',

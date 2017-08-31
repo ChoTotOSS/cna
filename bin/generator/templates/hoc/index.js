@@ -1,4 +1,5 @@
-const path = require('path')
+const path = require('path');
+const componentExists = require('../../../utils/componentExists');
 
 module.exports = {
   description: 'Add a HOC (High Order Component)',
@@ -7,13 +8,16 @@ module.exports = {
       type: 'input',
       name: 'name',
       message: 'HOC name: ',
-      // validate: function (value) {
-
-      // }
+      validate: function (componentName) {
+        if ((/.+/).test(componentName)) {
+          return componentExists('hocs', componentName) ? 'A HOC with this name already exists' : true;
+        }
+        return 'The name is required'; 
+      }
     }
   ],
-  actions: function (data) {
-    const pathToContainer = path.join(process.cwd(), 'hocs')
+  actions: function(data) {
+    const pathToContainer = path.join(process.cwd(), 'hocs');
 
     const actions = [
       {
@@ -22,8 +26,8 @@ module.exports = {
         templateFile: path.join(__dirname, 'hoc.js.hbs'),
         abortOnFail: true
       }
-    ]
+    ];
 
-    return actions
+    return actions;
   }
-}
+};

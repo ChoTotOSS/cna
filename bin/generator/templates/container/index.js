@@ -1,4 +1,5 @@
 const path = require('path');
+const componentExists = require('../../../utils/componentExists');
 
 module.exports = {
   description: 'Add a container',
@@ -6,10 +7,13 @@ module.exports = {
     {
       type: 'input',
       name: 'name',
-      message: 'Container name: '
-      // validate: function (value) {
-
-      // }
+      message: 'Container name: ',
+      validate: function (componentName) {
+        if ((/.+/).test(componentName)) {
+          return componentExists('containers', componentName) ? 'A container with this name already exists' : true;
+        }
+        return 'The name is required'; 
+      }
     },
     {
       type: 'list',
