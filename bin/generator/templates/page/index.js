@@ -30,7 +30,7 @@ module.exports = {
     }
   ],
   actions: function(data) {
-    const pathToContainer = path.join(process.cwd(), 'page');
+    const pathToContainer = path.join(process.cwd(), 'pages');
 
     const actions = [
       {

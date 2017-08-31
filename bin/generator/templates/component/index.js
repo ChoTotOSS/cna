@@ -61,18 +61,24 @@ module.exports = {
       }
     }
     template = path.join(__dirname, template);
-    const pathToFile = path.join(
+    const pathToComponent = path.join(
       process.cwd(),
-      'components/{{properCase name}}/index.js'
+      'components/{{properCase name}}'
     );
 
     const actions = [
       {
         type: 'add',
-        path: pathToFile,
+        path: path.join(pathToComponent, 'index.js'),
         templateFile: template,
         abortOnFail: true
-      }
+      },
+      {
+        type: 'add',
+        path: path.join(pathToComponent, 'messages.js'),
+        templateFile: path.join(__dirname, 'messages.js.hbs'),
+        abortOnFail: true
+      },
     ];
 
     return actions;
