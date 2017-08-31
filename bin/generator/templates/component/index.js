@@ -78,7 +78,7 @@ module.exports = {
         path: path.join(pathToComponent, 'messages.js'),
         templateFile: path.join(__dirname, 'messages.js.hbs'),
         abortOnFail: true
-      },
+      }
     ];
 
     return actions;
