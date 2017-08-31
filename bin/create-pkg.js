@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 'use sttrict';
-
 const fs = require('fs');
 const path = require('path');
 

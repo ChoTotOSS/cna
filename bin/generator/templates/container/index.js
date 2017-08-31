@@ -8,11 +8,13 @@ module.exports = {
       type: 'input',
       name: 'name',
       message: 'Container name: ',
-      validate: function (componentName) {
-        if ((/.+/).test(componentName)) {
-          return componentExists('containers', componentName) ? 'A container with this name already exists' : true;
+      validate: function(componentName) {
+        if (/.+/.test(componentName)) {
+          return componentExists('containers', componentName)
+            ? 'A container with this name already exists'
+            : true;
         }
-        return 'The name is required'; 
+        return 'The name is required';
       }
     },
     {

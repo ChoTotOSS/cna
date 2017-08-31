@@ -25,11 +25,13 @@ module.exports = {
       type: 'input',
       name: 'name',
       message: 'Component name: ',
-      validate: function (componentName) {
-        if ((/.+/).test(componentName)) {
-          return componentExists('components', componentName) ? 'A component with this name already exists' : true;
+      validate: function(componentName) {
+        if (/.+/.test(componentName)) {
+          return componentExists('components', componentName)
+            ? 'A component with this name already exists'
+            : true;
         }
-        return 'The name is required'; 
+        return 'The name is required';
       }
     },
     {

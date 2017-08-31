@@ -8,11 +8,13 @@ module.exports = {
       type: 'input',
       name: 'name',
       message: 'HOC name: ',
-      validate: function (componentName) {
-        if ((/.+/).test(componentName)) {
-          return componentExists('hocs', componentName) ? 'A HOC with this name already exists' : true;
+      validate: function(componentName) {
+        if (/.+/.test(componentName)) {
+          return componentExists('hocs', componentName)
+            ? 'A HOC with this name already exists'
+            : true;
         }
-        return 'The name is required'; 
+        return 'The name is required';
       }
     }
   ],
