@@ -9,7 +9,7 @@ Create next.js web app based on [next.js](https://github.com/zeit/next.js/).
 ```bash
 npm install -g cna
 
-cna my-next-app
+cna new my-next-app
 cd my-next-app/
 npm start
 ```
@@ -39,7 +39,7 @@ You don't need to use Node as your primary backend. The Node installation is onl
 
 To create a new app, run commands below:
 ```bash
-cna my-app
+cna new my-app
 
 cd my-app
 ```
@@ -79,6 +79,24 @@ my-app
 ├── store.js
 ├── yarn.lock
 ```
+
+# Generators
+## `cna new my-app`
+To create new web application with name `my-app`
+
+## `cna page`
+To create new page. New page is located at `pages` directory.
+
+## `cna container`
+To create new container. New page is located at `containers` directory.
+
+## `cna component`
+To create new component. New page is located at `components` directory.
+
+## `cna hoc`
+To create new HOC. New page is located at `hocs` directory.
+
+**Note:** You should stay at root directory of project.
 
 # Commands
 
