@@ -4,7 +4,7 @@ import { initStore } from '@/store'
 
 import Home from '@/containers/Home'
 import { syncData, fetchData } from '@/containers/Home/actions'
-import withLayout from '@/hoc/withLayout'
+import withLayout from '@/hocs/withLayout'
 
 import config from '@/config'
 import request from '@/utils/request'

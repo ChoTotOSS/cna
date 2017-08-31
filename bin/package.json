@@ -9,9 +9,7 @@
   },
   "standard": {
     "parser": "babel-eslint",
-    "ignore": [
-      "**/node_modules/**"
-    ]
+    "ignore": ["**/node_modules/**"]
   },
   "lint-staged": {
     "*.js": "standard"
