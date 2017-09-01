@@ -1,0 +1,41 @@
+/**
+*
+* {{ properCase name }}
+*
+*/
+
+import React from 'react'
+import styled from 'styled-components'
+
+{{#if wantRedux}}
+import withRedux from 'next-redux-wrapper'
+import { initStore } from '@/store'
+{{/if}}
+const H1 = styled.h1`
+  color: red;
+`
+
+class {{ properCase name }} extends React.Component {
+  static async getInitialProps (context) {
+    const { isServer } = context
+    return { isServer }
+  }
+
+  render () {
+    return (
+      <div>
+        <H1>Hello Page</H1>
+      </div>
+    )
+  }
+}
+
+{{#if wantRedux}}
+const mapStateToProps = state => {
+  return {}
+}
+
+export default withRedux(initStore, mapStateToProps, null)({{ properCase name }})
+{{else}}
+export default {{ properCase name }}
+{{/if}}
