@@ -1,7 +1,7 @@
 {
   "name": "cna",
   "version": "1.0.2",
-  "description": "Create next.js apps boilerplate",
+  "description": "CLI for creating next.js apps boilerplate",
   "main": "index.js",
   "scripts": {
     "precommit": "npm run prettier",
@@ -10,8 +10,27 @@
   "bin": {
     "cna": "./bin/index.js"
   },
-  "author": "Dzung Nguyen",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ChoTotOSS/cna.git"
+  },
+  "keywords": [
+    "nextjs",
+    "boilerplate",
+    "CLI",
+    "redux",
+    "reactjs",
+    "flux",
+    "styled-components"
+  ],
+  "authors": [
+    "David Nguyen <nndung179@gmail.com> (https://github.com/nndung179)"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ChoTotOSS/cna/issues"
+  },
+  "homepage": "https://chototoss.github.io/cna/",
   "engines": {
     "node": ">=4"
   },
@@ -25,5 +44,6 @@
   "devDependencies": {
     "husky": "^0.14.3",
     "prettier": "^1.6.1"
-  }
+  },
+  "npmName": "cna"
 }
