@@ -1,5 +1,5 @@
-import { injectGlobal } from 'styled-components'
-import normalize from './normalize'
+import { injectGlobal } from 'styled-components';
+import normalize from './normalize';
 
 injectGlobal`
   ${normalize}
@@ -14,4 +14,4 @@ injectGlobal`
     -webkit-overflow-scrolling: touch;
     -webkit-font-smoothing: antialiased;
   }
-`
+`;

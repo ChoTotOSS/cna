@@ -1,12 +1,12 @@
-import { DEFAULT_LANG } from '@/utils/constants'
+import { DEFAULT_LANG } from '@/utils/constants';
 
 const messages = {
   en: {
-    loadMore: 'Load more'
+    loadMore: 'Load more',
   },
   vi: {
-    loadMore: 'Xem thêm'
-  }
-}[DEFAULT_LANG]
+    loadMore: 'Xem thêm',
+  },
+}[DEFAULT_LANG];
 
-export default messages
+export default messages;

@@ -230,5 +230,5 @@ const normalize = `
   [hidden] {
     display: none;
   }
-`
-export default normalize
+`;
+export default normalize;

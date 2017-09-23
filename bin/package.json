@@ -5,14 +5,15 @@
     "precommit": "lint-staged",
     "build": "next build",
     "start": "nodemon -w server.js",
-    "production": "npm run build && NODE_ENV=production node index.js"
-  },
-  "standard": {
-    "parser": "babel-eslint",
-    "ignore": ["**/node_modules/**"]
+    "production": "npm run build && NODE_ENV=production node index.js",
+    "eslint": "eslint ./**/*.js",
+    "format": "prettier --trailing-comma es5 --single-quote --write './*/*.js' './*/!(node_modules)/**/*.js'"
   },
   "lint-staged": {
-    "*.js": "standard"
+    "*.js": [
+      "prettier --trailing-comma es5 --single-quote --write",
+      "git add"
+    ]
   },
   "dependencies": {
     "babel-plugin-root-import": "^5.1.0",
@@ -24,21 +25,27 @@
     "babel-register": "^6.24.1",
     "express": "^4.15.2",
     "isomorphic-fetch": "^2.2.1",
-    "next": "^3.0.3",
+    "next": "^3.2.2",
     "next-redux-wrapper": "^1.1.2",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.4",
-    "rebass": "^1.0.3",
     "redux": "^3.6.0",
     "redux-devtools-extension": "^2.13.2",
     "styled-components": "^2.1.1"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
-    "babel-eslint": "^7.2.3",
-    "lint-staged": "^4.0.2",
-    "standard": "^10.0.2"
+    "babel-eslint": "^8.0.0",
+    "eslint": "^4.7.2",
+    "eslint-config-react-app": "^2.0.0",
+    "eslint-plugin-flowtype": "^2.35.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.3.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^4.2.2",
+    "prettier": "^1.7.0"
   }
 }

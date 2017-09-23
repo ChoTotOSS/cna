@@ -1,14 +1,14 @@
-import { DEFAULT_LANG } from '@/utils/constants'
+import { DEFAULT_LANG } from '@/utils/constants';
 
 const messages = {
   en: {
     pointBy: 'points by ',
-    comment: 'comments'
+    comment: 'comments',
   },
   vi: {
     pointBy: 'bình chọn bởi ',
-    comment: 'bình luận'
-  }
-}[DEFAULT_LANG]
+    comment: 'bình luận',
+  },
+}[DEFAULT_LANG];
 
-export default messages
+export default messages;

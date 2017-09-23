@@ -17,14 +17,15 @@
   "keywords": [
     "nextjs",
     "boilerplate",
-    "CLI",
+    "stater-kit",
+    "cli",
     "redux",
     "reactjs",
     "flux",
     "styled-components"
   ],
   "authors": [
-    "David Nguyen <nndung179@gmail.com> (https://github.com/nndung179)"
+    "David Nguyen <dzungnguyen179@gmail.com> (https://github.com/davidnguyen179)"
   ],
   "license": "MIT",
   "bugs": {

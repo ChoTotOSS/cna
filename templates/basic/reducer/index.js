@@ -1,8 +1,8 @@
-import { combineReducers } from 'redux'
-import home from '@/containers/Home/reducer'
+import { combineReducers } from 'redux';
+import home from '@/containers/Home/reducer';
 
-export default function createReducer () {
+export default function createReducer() {
   return combineReducers({
-    home
-  })
+    home,
+  });
 }

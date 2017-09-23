@@ -1,39 +1,52 @@
-# Fetching data with Material UI
+# Hackernews
 
-This example allow you to fetch data from api get news from `techcrunch` using api service: [https://newsapi.org/](https://newsapi.org/). 
+This page allow you to fetch data from api to get news from `Hackernews` using api service: [Unofficial Hacker News API](https://github.com/cheeaun/node-hnapi).
 
-In this example, I use:
-+ babel config
-+ postCSS config
-+ webpack config: to add plugins allow develop CSS using SCSS
-+ using Redux
-+ using Material UI
-+ using custom Document
-+ custom Routes
-+ Data fetching
-+ gulp
-
+**Technologies**
+ - [next.js](https://github.com/zeit/next.js/)
+ - [Express](https://expressjs.com/)
+ - [styled-components](https://www.styled-components.com/)
+ - [react](https://facebook.github.io/react/)
+ - [redux](http://redux.js.org/)
+ 
+**Data source**
+ - [Unofficial Hacker News API](https://github.com/cheeaun/node-hnapi) by cheeaun 
 Basically, Next.JS allow you to use `style-jsx` package to develop CSS, but in the production mode, html is not minified. So that, gulp allow you to bundle final all scss into css.
 
-## How to use
+## Require
 
-Download the example [or clone the repo](https://github.com/zeit/next.js):
-
-Install it and run:
-
-# development
+To use **hot-code reloading**. You need `nodemon` package.
 
 ```bash
-npm i nodemon -g
-npm install
-npm run dev
+npm i -g nodemon
 ```
 
-# production
+# development
+**npm**
+```bash
+npm i
+npm start
+```
 
+**yarn**
+```bash
+yarn install
+yarn start
+```
+
+Then open [http://localhost:3000](http://localhost:3000)
+
+# production
+**npm**
 ```bash
 npm i
 npm run production
 ```
 
+**yarn**
+```bash
+yarn install
+yarn run production
+```
 
+Then open [http://localhost:3000](http://localhost:3000)
