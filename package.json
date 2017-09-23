@@ -4,8 +4,14 @@
   "description": "CLI for creating next.js apps boilerplate",
   "main": "index.js",
   "scripts": {
-    "precommit": "npm run prettier",
-    "prettier": "prettier --config ./.prettierrc --write 'bin/**/*.js'"
+    "precommit": "lint-staged",
+    "format": "prettier --trailing-comma es5 --single-quote --write 'bin/**/*.js'"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --trailing-comma es5 --single-quote --write",
+      "git add"
+    ]
   },
   "bin": {
     "cna": "./bin/index.js"
@@ -44,6 +50,7 @@
   },
   "devDependencies": {
     "husky": "^0.14.3",
+    "lint-staged": "^4.2.2",
     "prettier": "^1.6.1"
   },
   "npmName": "cna"
