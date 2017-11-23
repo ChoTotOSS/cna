@@ -1,17 +1,15 @@
 {
   "name": "cna",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "CLI for creating next.js apps boilerplate",
   "main": "index.js",
   "scripts": {
     "precommit": "lint-staged",
-    "format": "prettier --trailing-comma es5 --single-quote --write 'bin/**/*.js'"
+    "format":
+      "prettier --trailing-comma es5 --single-quote --write 'bin/**/*.js'"
   },
   "lint-staged": {
-    "*.js": [
-      "prettier --trailing-comma es5 --single-quote --write",
-      "git add"
-    ]
+    "*.js": ["prettier --trailing-comma es5 --single-quote --write", "git add"]
   },
   "bin": {
     "cna": "./bin/index.js"

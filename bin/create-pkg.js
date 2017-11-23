@@ -11,6 +11,6 @@ module.exports = function(appName) {
 
   fs.writeFile(pkgFileName, JSON.stringify(data, null, 2), 'utf8', err => {
     if (err) throw err;
-    console.log('Created package.json successfully!!!🎉🎉🎉');
+    console.log('Created package.json successfully!!! 🎉 🎉 🎉');
   });
 };
