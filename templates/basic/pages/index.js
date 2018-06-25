@@ -1,10 +1,7 @@
 import React from 'react';
-import withRedux from 'next-redux-wrapper';
-import { initStore } from '@/store';
-
+import { connect } from 'react-redux';
 import Home from '@/containers/Home';
 import { syncData, fetchData } from '@/containers/Home/actions';
-import withLayout from '@/hocs/withLayout';
 
 class Index extends React.Component {
   static async getInitialProps(context) {
@@ -41,4 +38,7 @@ const mapStateToProps = state => {
   };
 };
 
-export default withRedux(initStore, mapStateToProps, null)(withLayout(Index));
+export default connect(
+  mapStateToProps,
+  null
+)(Index);

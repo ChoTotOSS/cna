@@ -1,6 +1,4 @@
-import {
-  SYNC_DATA_SERVER_CLIENT,
-} from './constants';
+import { SYNC_DATA_SERVER_CLIENT } from './constants';
 
 const initState = {
   fetching: false,
