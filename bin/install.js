@@ -6,6 +6,7 @@ const fs = require('fs-extra');
 const path = require('path');
 const { spawn } = require('child_process');
 const createPackageJson = require('./create-pkg');
+const createDockerfile = require('./create-dockerfile');
 
 module.exports = function(userYarn) {
   const appName = process.argv[3];
@@ -19,6 +20,7 @@ module.exports = function(userYarn) {
     fs.copySync(templatesPath, pathName);
 
     createPackageJson(appName);
+    createDockerfile(appName);
 
     const packageManager = userYarn ? 'yarn' : 'npm';
 
