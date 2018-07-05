@@ -5,11 +5,13 @@
   "main": "index.js",
   "scripts": {
     "precommit": "lint-staged",
-    "format":
-      "prettier --trailing-comma es5 --single-quote --write 'bin/**/*.js'"
+    "format": "prettier --trailing-comma es5 --single-quote --write 'bin/**/*.js'"
   },
   "lint-staged": {
-    "*.js": ["prettier --trailing-comma es5 --single-quote --write", "git add"]
+    "*.js": [
+      "prettier --trailing-comma es5 --single-quote --write",
+      "git add"
+    ]
   },
   "bin": {
     "cna": "./bin/index.js"

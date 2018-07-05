@@ -17,6 +17,7 @@ export default class ServerDocument extends Document {
     const sheet = new ServerStyleSheet();
     const main = sheet.collectStyles(<Main />);
     const styleTags = sheet.getStyleElement();
+    const env = `window.ENV = '${process.env.ENV || 'development'}';`;
     return (
       <html>
         <Head>
@@ -26,6 +27,7 @@ export default class ServerDocument extends Document {
           />
           <link rel="manifest" href="/static/manifest.json" />
           <link rel="shortcut icon" href="/static/img/favicon.ico" />
+          <link rel="stylesheet" href="/_next/static/style.css" />
           {this.renderAppleMetas()}
           {this.renderAppleLinks()}
           {styleTags}
@@ -33,6 +35,7 @@ export default class ServerDocument extends Document {
         <body className="custom_class">
           {this.props.customValue}
           {main}
+          <script dangerouslySetInnerHTML={{ __html: env }} />
           <NextScript />
         </body>
       </html>

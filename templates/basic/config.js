@@ -1,16 +1,24 @@
-const env = process.env.NODE_ENV || 'development'
+const env = (process.browser ? window.ENV : process.env.ENV) || 'development';
 
 const config = {
   development: {
     api: {
-      hn: 'https://node-hnapi.herokuapp.com/news'
-    }
+      hn: 'https://node-hnapi.herokuapp.com/news',
+    },
+  },
+  staging: {
+    api: {
+      hn: 'https://node-hnapi.herokuapp.com/news',
+    },
   },
   production: {
     api: {
-      hn: 'https://node-hnapi.herokuapp.com/news'
-    }
-  }
-}[env]
+      hn: 'https://node-hnapi.herokuapp.com/news',
+    },
+  },
+}[env];
 
-export default config
+module.exports = {
+  config,
+  env,
+};

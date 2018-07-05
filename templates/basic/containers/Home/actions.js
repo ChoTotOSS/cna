@@ -6,7 +6,7 @@ import {
   SYNC_DATA_SERVER_CLIENT,
 } from './constants';
 
-import config from '@/config';
+import { config } from '@/config';
 
 export async function fetchData(query) {
   const queryArray = Object.keys(query).map(key => {
