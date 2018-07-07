@@ -16,14 +16,6 @@ npm start
 
 # Getting started
 
-## Require
-
-To use **hot-code reloading**. You need `nodemon` package.
-
-```bash
-npm i -g nodemon
-```
-
 ## Installation
 install it once globally
 **npm**
