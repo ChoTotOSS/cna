@@ -4,7 +4,6 @@
   "description": "CLI for creating next.js apps boilerplate",
   "main": "index.js",
   "scripts": {
-    "pub": "npm version patch && npm publish",
     "precommit": "lint-staged",
     "format": "prettier --trailing-comma es5 --single-quote --write 'bin/**/*.js'"
   },
