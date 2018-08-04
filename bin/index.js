@@ -3,8 +3,6 @@
 
 const commander = require('commander');
 const chalk = require('chalk');
-const path = require('path');
-const semver = require('semver');
 const { spawn } = require('child_process');
 
 const packageJson = require('../package.json');
@@ -22,7 +20,7 @@ const COMMANDS = {
   component: 'component',
   container: 'container',
   hoc: 'hoc',
-  page: 'page'
+  page: 'page',
 };
 
 program
@@ -111,7 +109,7 @@ if (!process.argv[2]) {
 if (invalid) {
   spawn('cna', ['--help'], {
     cwd: process.cwd(),
-    stdio: 'inherit'
+    stdio: 'inherit',
   }).on('exit', function() {
     process.exit(1);
   });

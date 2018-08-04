@@ -9,10 +9,6 @@ const MainWrapper = styled.main`
 
 function withLayout(Child) {
   class WrappedComponent extends React.Component {
-    static getInitialProps(context) {
-      return Child.getInitialProps(context);
-    }
-
     render() {
       return (
         <div>

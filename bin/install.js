@@ -7,6 +7,7 @@ const path = require('path');
 const { spawn } = require('child_process');
 const createPackageJson = require('./create-pkg');
 const createDockerfile = require('./create-dockerfile');
+const createReadMe = require('./create-readme');
 
 module.exports = function(userYarn) {
   const appName = process.argv[3];
@@ -21,6 +22,7 @@ module.exports = function(userYarn) {
 
     createPackageJson(appName);
     createDockerfile(appName);
+    createReadMe(appName);
 
     const packageManager = userYarn ? 'yarn' : 'npm';
 
