@@ -27,7 +27,6 @@ export default class ServerDocument extends Document {
           />
           <link rel="manifest" href="/static/manifest.json" />
           <link rel="shortcut icon" href="/static/img/favicon.ico" />
-          <link rel="stylesheet" href="/_next/static/style.css" />
           {this.renderAppleMetas()}
           {this.renderAppleLinks()}
           {styleTags}

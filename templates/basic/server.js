@@ -1,4 +1,6 @@
 const express = require('express');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
 const next = require('next');
 
 const routes = require('./routes');
@@ -23,6 +25,9 @@ app.prepare().then(() => {
     return handle(req, res);
   });
 
+  server.use(bodyParser.json());
+  server.use(bodyParser.urlencoded({ extended: false }));
+  server.use(cookieParser());
   server.use(handle);
 
   server.listen(port, err => {
