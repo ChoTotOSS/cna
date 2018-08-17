@@ -1,0 +1,45 @@
+{
+  "name": "create-next-app",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node server.js",
+    "build": "next build",
+    "start:docker": "NODE_ENV=production node server.js",
+    "prestart:staging": "npm run build",
+    "start:staging": "NODE_ENV=production ENV=staging node server.js",
+    "prestart:production": "npm run build",
+    "start:production": "NODE_ENV=production ENV=production node server.js",
+    "eslint": "eslint ./**/*.js"
+  },
+  "dependencies": {
+    "babel-plugin-root-import": "6.1.0",
+    "babel-plugin-styled-components": "1.5.1",
+    "body-parser": "1.18.3",
+    "cookie-parser": "1.4.3",
+    "express": "4.16.3",
+    "isomorphic-fetch": "2.2.1",
+    "next": "6.1.1",
+    "next-redux-saga": "^3.0.0-beta.1",
+    "next-redux-wrapper": "2.0.0-beta.6",
+    "next-routes": "1.4.2",
+    "react": "16.4.1",
+    "react-dom": "16.4.1",
+    "react-redux": "5.0.7",
+    "redux": "4.0.0",
+    "redux-devtools-extension": "2.13.5",
+    "redux-saga": "^0.16.0",
+    "styled-components": "3.3.3"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-eslint": "7.2.3",
+    "babel-helper-annotate-as-pure": "7.0.0-beta.2",
+    "eslint": "4.1.1",
+    "eslint-config-react-app": "2.1.0",
+    "eslint-plugin-flowtype": "2.34.1",
+    "eslint-plugin-import": "2.6.0",
+    "eslint-plugin-jsx-a11y": "5.1.1",
+    "eslint-plugin-react": "7.1.0"
+  }
+}
