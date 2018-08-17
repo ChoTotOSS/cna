@@ -8,13 +8,21 @@ const { spawn } = require('child_process');
 const createPackageJson = require('./create-pkg');
 const createDockerfile = require('./create-dockerfile');
 const createReadMe = require('./create-readme');
+const TEMPLATES = require('./template');
 
-module.exports = function(userYarn) {
+module.exports = function(userYarn, selectedIndex) {
   const appName = process.argv[3];
 
   const pathName = path.join(process.cwd(), appName);
   const appNameExists = fs.existsSync(pathName);
-  const templatesPath = path.join(__dirname, '..', 'templates/basic');
+  const template = TEMPLATES[selectedIndex];
+
+  if (!template) {
+    console.log(chalk.red('Template not found with your option. 😕 😕 😕'));
+    process.exit(1);
+  }
+
+  const templatesPath = path.join(__dirname, '..', template.path);
 
   if (!appNameExists) {
     fs.ensureDirSync(pathName);
@@ -30,7 +38,7 @@ module.exports = function(userYarn) {
       cwd: pathName,
       stdio: 'inherit',
     });
-    install.on('exit', code => {
+    install.on('exit', function(code) {
       console.log(chalk.cyan('Completed setting up project!!! 🎊 🎉'));
       process.exit(code);
     });

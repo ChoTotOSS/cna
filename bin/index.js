@@ -3,6 +3,7 @@
 
 const commander = require('commander');
 const chalk = require('chalk');
+const readline = require('readline');
 const { spawn } = require('child_process');
 
 const packageJson = require('../package.json');
@@ -10,6 +11,7 @@ const getNpmVersion = require('./utils/npmVersion');
 const shouldUseYarn = require('./utils/shouldUseYarn');
 const generate = require('./utils/generate');
 const install = require('./install');
+const questionnaire = require('./questionnaire');
 
 const program = new commander.Command(packageJson.name).version(
   packageJson.version
@@ -26,6 +28,7 @@ const COMMANDS = {
 program
   .command(`${COMMANDS.new} [appName]`)
   .description('Create new nextjs app')
+
   .action(function(appName) {
     if (typeof appName === 'undefined') {
       console.error('Please specify the project directory:');
@@ -59,10 +62,13 @@ program
         );
       }
     }
-    install(useYarn);
+
+    questionnaire(function(selectedIndex) {
+      install(useYarn, selectedIndex);
+    });
   })
   .allowUnknownOption()
-  .on('--help', () => {
+  .on('--help', function() {
     console.log(`    Only ${chalk.green('<project-directory>')} is required.`);
     console.log();
   });
