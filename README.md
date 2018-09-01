@@ -7,10 +7,8 @@ Create next.js web app based on [next.js](https://github.com/zeit/next.js/).
 
 # Quick overview
 ```bash
-npm install -g cna
-
-cna new my-next-app
-cd my-next-app/
+npx cna new my-app
+cd my-app
 npm start
 ```
 
@@ -35,7 +33,8 @@ cna new my-app
 
 cd my-app
 ```
-It will create an project with name **my-app** with structure below:
+
+**Basic template** structure:
 ```
 my-app
 ├── assests/
@@ -62,14 +61,52 @@ my-app
     └── request.js
 ├── .babelrc
 ├── .gitignore
+├── Dockerfile
 ├── config.js
 ├── index.js
 ├── next.config.js
 ├── package.json
+├── routes.js
 ├── README.md
 ├── server.js
 ├── store.js
-├── yarn.lock
+```
+
+**redux-saga template** structure:
+```
+my-app
+├── assests/
+├── node_modules/
+├── components
+│   └── Article/
+│   └── Header/
+└── containers
+    └── Home/
+├── hoc/
+    └── withLayout.js
+├── pages/
+    └── _document.js
+    └── index.js
+├── reducer/
+    └── index.js
+├── static/
+    └── img/
+    └── manifest.json
+├── utils/
+    └── constants.js
+    └── request.js
+├── .babelrc
+├── .gitignore
+├── Dockerfile
+├── config.js
+├── index.js
+├── next.config.js
+├── package.json
+├── routes.js
+├── saga.js
+├── README.md
+├── server.js
+├── store.js
 ```
 
 # Generators
