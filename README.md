@@ -12,6 +12,12 @@ cd my-app
 npm start
 ```
 
+Then open [http://localhost:8080/](http://localhost:8080/) to see your app.
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/6290720/45011706-13b6ad00-b03e-11e8-992e-ca776dc372d7.gif" />
+</p>
+
 ## Creating an App
 
 You’ll need to have Node >= 6 on your machine. You can use [nvm](https://github.com/creationix/nvm#usage) to easily switch Node versions between different projects.
@@ -30,7 +36,7 @@ npm i -g cna
 cna new my-app
 ```
 
-**web app's structure:**
+**Structure:**
 
 ```
 my-app
