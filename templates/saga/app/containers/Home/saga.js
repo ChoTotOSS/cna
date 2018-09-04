@@ -3,8 +3,8 @@ import { FETCH_DATA } from './constants';
 
 import { fetchDataSuccess, fetchDataFail } from './actions';
 
-import { config } from '@/config';
-import request from '@/utils/request';
+import { config } from '~/app/config';
+import request from '~/app/utils/request';
 
 function* fetchData({ payload: { query } }) {
   try {

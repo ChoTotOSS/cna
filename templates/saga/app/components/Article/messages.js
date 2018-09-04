@@ -1,4 +1,4 @@
-import { DEFAULT_LANG } from '@/utils/constants';
+import { DEFAULT_LANG } from '~/app/utils/constants';
 
 const messages = {
   en: {

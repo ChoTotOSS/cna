@@ -1,6 +1,6 @@
 import Document, { Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
-import { APPLE_METAS_LINKS } from '@/utils/constants';
+import { APPLE_METAS_LINKS } from '~/app/utils/constants';
 
 export default class ServerDocument extends Document {
   renderAppleMetas() {
@@ -21,10 +21,7 @@ export default class ServerDocument extends Document {
     return (
       <html>
         <Head>
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-          />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
           <link rel="manifest" href="/static/manifest.json" />
           <link rel="shortcut icon" href="/static/img/favicon.ico" />
           {this.renderAppleMetas()}
