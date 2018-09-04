@@ -40,6 +40,7 @@ module.exports = function(userYarn, selectedIndex) {
     });
     install.on('exit', function(code) {
       console.log(chalk.cyan('Completed setting up project!!! 🎊 🎉'));
+      console.log('\n\nHappy hacking!');
       process.exit(code);
     });
   } else {

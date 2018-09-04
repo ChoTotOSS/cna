@@ -12,26 +12,22 @@ cd my-app
 npm start
 ```
 
-# Getting started
-
-## Installation
-install it once globally
-**npm**
-```bash
-npm i -g cna
-```
+## Creating an App
 
 You’ll need to have Node >= 6 on your machine. You can use [nvm](https://github.com/creationix/nvm#usage) to easily switch Node versions between different projects.
 
-You don't need to use Node as your primary backend. The Node installation is only required for CNA and running the Next.js server in development/production.
+To create a new app, you may choose one of the following methods:
 
-## Creating an App
+### npx
 
-To create a new app, run commands below:
 ```bash
-cna new my-app
+npx cna new my-app
+```
 
-cd my-app
+### npm
+```bash
+npm i -g cna
+cna new my-app
 ```
 
 **web app's structure:**
@@ -39,6 +35,20 @@ cd my-app
 ```
 my-app
 ├── app/
+    └── assests/
+    └── components/
+    └── containers/
+    └── hoc/
+    └── middlewares/
+    └── pages/
+    └── static/
+    └── utils/
+    └── config.js
+    └── next.config.js
+    └── routes.js
+    └── store.js
+    └── reducer.js
+    └── saga.js
 ├── .babelrc
 ├── .dockerignore
 ├── .editorconfig

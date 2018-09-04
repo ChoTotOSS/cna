@@ -40,7 +40,7 @@
   },
   "homepage": "https://chototoss.github.io/cna/",
   "engines": {
-    "node": ">=4"
+    "node": ">=6"
   },
   "dependencies": {
     "chalk": "^2.0.1",
