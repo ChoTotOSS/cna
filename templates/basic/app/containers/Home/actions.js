@@ -1,12 +1,7 @@
-import request from '@/utils/request';
-import {
-  FETCH_DATA,
-  FETCH_DATA_SUCCESS,
-  FETCH_DATA_FAIL,
-  SYNC_DATA_SERVER_CLIENT,
-} from './constants';
+import request from '~/app/utils/request';
+import { FETCH_DATA, FETCH_DATA_SUCCESS, FETCH_DATA_FAIL, SYNC_DATA_SERVER_CLIENT } from './constants';
 
-import { config } from '@/config';
+import { config } from '~/app/config';
 
 export async function fetchData(query) {
   const queryArray = Object.keys(query).map(key => {

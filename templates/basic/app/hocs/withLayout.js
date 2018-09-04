@@ -1,7 +1,7 @@
-import '@/assets/styles/globalStyles';
+import '~/app/assets/styles/globalStyles';
 import React from 'react';
 import styled from 'styled-components';
-import Header from '@/components/Header';
+import Header from '~/app/components/Header';
 
 const MainWrapper = styled.main`
   padding: 0 10px 50px 10px;

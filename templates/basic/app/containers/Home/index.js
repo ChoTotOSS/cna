@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
 
-import Article from '@/components/Article';
+import Article from '~/app/components/Article';
 import messages from './messages';
 
 const BottomZone = styled.div`

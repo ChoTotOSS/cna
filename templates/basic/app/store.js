@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import clientMiddleware from '@/middlewares/clientMiddleware';
-import combineReducer from '@/reducer';
+import clientMiddleware from '~/app/middlewares/clientMiddleware';
+import combineReducer from '~/app/reducer';
 
 const dev = process.env.NODE_ENV === 'development';
 const _initialState = {};
@@ -12,11 +12,7 @@ export const initStore = (initialState = _initialState) => {
   let store = createStore(combineReducer(), initialState, ...enhancers);
 
   if (dev) {
-    store = createStore(
-      combineReducer(),
-      initialState,
-      composeWithDevTools(...enhancers)
-    );
+    store = createStore(combineReducer(), initialState, composeWithDevTools(...enhancers));
   }
   return store;
 };

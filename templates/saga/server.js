@@ -27,7 +27,7 @@ app.prepare().then(() => {
 
   const router = express.Router();
 
-  server.get('/health', (req, res) => {
+  server.get('/healthz', (req, res) => {
     res.send('OK');
   });
 

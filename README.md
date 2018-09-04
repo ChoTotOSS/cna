@@ -34,79 +34,23 @@ cna new my-app
 cd my-app
 ```
 
-**Basic template** structure:
-```
-my-app
-├── assests/
-├── node_modules/
-├── components
-│   └── Article/
-│   └── Header/
-└── containers
-    └── Home/
-├── hoc/
-    └── withLayout.js
-├── middlewares/
-    └── clientMiddleware.js
-├── pages/
-    └── _document.js
-    └── index.js
-├── reducer/
-    └── index.js
-├── static/
-    └── img/
-    └── manifest.json
-├── utils/
-    └── constants.js
-    └── request.js
-├── .babelrc
-├── .gitignore
-├── Dockerfile
-├── config.js
-├── index.js
-├── next.config.js
-├── package.json
-├── routes.js
-├── README.md
-├── server.js
-├── store.js
-```
+**web app's structure:**
 
-**redux-saga template** structure:
 ```
 my-app
-├── assests/
-├── node_modules/
-├── components
-│   └── Article/
-│   └── Header/
-└── containers
-    └── Home/
-├── hoc/
-    └── withLayout.js
-├── pages/
-    └── _document.js
-    └── index.js
-├── reducer/
-    └── index.js
-├── static/
-    └── img/
-    └── manifest.json
-├── utils/
-    └── constants.js
-    └── request.js
+├── app/
 ├── .babelrc
+├── .dockerignore
+├── .editorconfig
+├── .eslintignore
+├── .eslintrc
 ├── .gitignore
+├── .prettierrc
 ├── Dockerfile
-├── config.js
 ├── index.js
-├── next.config.js
 ├── package.json
-├── routes.js
-├── saga.js
 ├── README.md
 ├── server.js
-├── store.js
 ```
 
 # Generators
