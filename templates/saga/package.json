@@ -2,13 +2,13 @@
   "name": "create-next-app",
   "version": "1.0.0",
   "scripts": {
-    "start": "node index.js",
+    "start": "node ./server",
     "build": "next build app",
-    "start:docker": "NODE_ENV=production node index.js",
+    "start:docker": "NODE_ENV=production node ./server",
     "prestart:staging": "npm run build",
-    "start:staging": "NODE_ENV=production ENV=staging node index.js",
+    "start:staging": "NODE_ENV=production ENV=staging node ./server",
     "prestart:production": "npm run build",
-    "start:production": "NODE_ENV=production ENV=production node index.js",
+    "start:production": "NODE_ENV=production ENV=production node ./server",
     "eslint": "eslint ./**/*.js"
   },
   "dependencies": {

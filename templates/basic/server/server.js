@@ -2,14 +2,13 @@ import express from 'express';
 import path from 'path';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
-import nextConfig from './app/next.config';
-import routes from './app/routes';
-
+import nextConfig from '../app/next.config';
+import routes from '../app/routes';
 const next = require('next');
 
 const app = next({
   dev: process.env.NODE_ENV !== 'production',
-  dir: path.resolve(__dirname, 'app'),
+  dir: path.resolve(__dirname, '../app'),
   conf: nextConfig,
 });
 
