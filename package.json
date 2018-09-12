@@ -1,6 +1,6 @@
 {
   "name": "cna",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "CLI for creating next.js apps boilerplate",
   "main": "index.js",
   "scripts": {
