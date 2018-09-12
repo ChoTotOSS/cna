@@ -4,11 +4,6 @@
   "scripts": {
     "start": "node ./server",
     "build": "next build app",
-    "start:docker": "NODE_ENV=production node ./server",
-    "prestart:staging": "npm run build",
-    "start:staging": "NODE_ENV=production ENV=staging node ./server",
-    "prestart:production": "npm run build",
-    "start:production": "NODE_ENV=production ENV=production node ./server",
     "eslint": "eslint ./**/*.js"
   },
   "dependencies": {
@@ -21,11 +16,11 @@
     "cookie-parser": "1.4.3",
     "express": "4.16.3",
     "isomorphic-fetch": "2.2.1",
-    "next": "6.1.1",
-    "next-redux-wrapper": "2.0.0-beta.6",
+    "next": "6.1.2",
+    "next-redux-wrapper": "2.0.0",
     "next-routes": "1.4.2",
-    "react": "16.4.1",
-    "react-dom": "16.4.1",
+    "react": "16.5.0",
+    "react-dom": "16.5.0",
     "react-redux": "5.0.7",
     "redux": "4.0.0",
     "redux-devtools-extension": "2.13.5",

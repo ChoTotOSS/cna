@@ -1,0 +1,15 @@
+{
+  "short_name": "cna",
+  "name": "cna",
+  "icons": [
+    {
+      "src": "/static/img/hn.png",
+      "type": "image/png",
+      "sizes": "200x200"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#222",
+  "display": "standalone",
+  "theme_color": "#222"
+}
