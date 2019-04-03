@@ -1,7 +1,7 @@
-import { injectGlobal } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 import normalize from './normalize';
 
-injectGlobal`
+const GlobalStyle = createGlobalStyle`
   ${normalize}
   * {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -15,3 +15,5 @@ injectGlobal`
     -webkit-font-smoothing: antialiased;
   }
 `;
+
+export default GlobalStyle;
