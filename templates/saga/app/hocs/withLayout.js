@@ -1,4 +1,4 @@
-import '~/app/assets/styles/globalStyles';
+import GlobalStyle from '~/app/assets/styles/globalStyles';
 import React from 'react';
 import styled from 'styled-components';
 import Header from '~/app/components/Header';
@@ -16,6 +16,7 @@ function withLayout(Child) {
           <MainWrapper>
             <Child {...this.props} />
           </MainWrapper>
+          <GlobalStyle />
         </div>
       );
     }
